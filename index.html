@@ -1,18 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>숫자 맞추기 게임!</h1>
-    <div id="result-area">결과가 나온다</div>
-    <input type="number" id="user-input"/>
-    <button id="play-button">Go!</button>
-    <script src="main.js"></script>
-</body>
-</html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Game ON</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
 
+  <body>
+    <!-- <h1><a href="https://number-game-on.netlify.app/">The Number Game</a></h1> -->
+    <h1><a href='/'>The Number Game</a></h1>
+    
+    <div class="bg-box">
+      <video autoplay loop muted>
+        <source src="/video/background_animation.mp4">
+        <strong>Your browser does not support the video tag.</strong>
+      </video>
+    </div>  
+
+    <div class="talk-area">
+      <div class="start" id="start-box">
+        <p>Welcome to Game Room</p>
+        <button id="start-button" class="btn-start">들어가기</button>
+      </div>
+      <div class="intro hidden" id="intro-box">
+        <div id="intro1">
+          <div class="talk">어서오게.</div>
+          <p>방에 들어서자 한 남자가 말을 걸어왔다.</p>
+          <button id="next1" class="btn-next">인사한다.</button>
+        </div>
+        <div class="hidden" id="intro2">
+          <div class="talk">신입인가보군. 그럼 숙제가 있어.</div>
+          <p> 갑자기 숙제라고?</p>
+          <p> 왠지 피할 수 없을 것 같은 예감이 들었다.</p>
+          <button id="next2" class="btn-next">무슨 숙제인지 묻는다.</button>
+        </div>
+        <div class="hidden" id="intro3">
+          <div class="talk">간단해. 내가 생각한 숫자를 맞춰봐.<br> <i>1에서 100 사이의 숫자</i> 중 하나야.</div>
+          <p> 남자는 짖궂은 미소로 나를 바라보고 있다.</p>
+          <button id="next3" class="btn-next">(이거 맞출수 있는게 맞나...)</button>
+        </div>
+        <div class="hidden" id="intro4">
+          <div class="talk">기회는 <i>5번</i>. 네가 말한 숫자보다 <br> 내가 생각한 숫자가 더 크다면 <i>UP</i>, <br> 작다면 <i>Down</i> 정도는 알려주겠어.</div>
+          <p> 일단 도전해보자...</p>
+          <button id="game" class="btn-next">게임 시작</button>
+        </div>
+      </div>
+      <div class="play hidden" id="play-box">
+        <div class="talk" id="result-area">잊지 말라고. 1에서 100사이 숫자야.</div>
+        <div class="chance" id="chance-area">남은 기회: 5</div>
+        <input type="number"  placeholder="답을 입력하세요" class="input_ans" id="user-input"/>
+        <p></p>
+        <div class="play_btn_box">
+          <button class="btn-ans" id="play-button">답을 말한다</button>
+          <button class="btn-ans" id="reset-button">재도전</button>
+        </div>
+        <div class="record" id="record-area">지난 입력값 : </div>
+      </div>
+    </div>
+    
+    <script src="main.js"></script>    
+  </body>
+
+</html>
